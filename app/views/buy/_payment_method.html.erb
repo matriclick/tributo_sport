@@ -1,0 +1,10 @@
+<div style="float:left; width:auto">
+	<b>Método de Pago</b>
+	<hr>
+	<div style="color:#545454; margin-left:20px;">
+		<%= radio_button("payment", "option", "webpay", :checked => true) %> 
+		Tarjetas de crédito y débito (webpay) <br /><br />
+		<%= radio_button("payment", "option", "transfer") %>
+		Trasferencia bancaria (depósito a la cuenta de Matriclick) <br /><br />
+	</div>
+</div>

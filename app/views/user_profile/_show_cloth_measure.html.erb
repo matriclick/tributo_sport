@@ -1,0 +1,20 @@
+<div style="float:left">
+	<%= image_tag 'el_bazar/medidas.png', alt: 'medidas' %>
+</div>
+<% if @cloth_measure.nil? %>
+<% end %>
+<div style="float:left">
+	<h3 style="margin-top:105px">
+		Busto <%= get_bust_link %>
+	</h3>
+	<h3 style="margin-top:20px">
+		Cintura <%= get_waist_link %>
+	</h3>
+	<h3 style="margin-top:25px">
+		Caderas <%= get_hips_link %>
+	</h3>
+	<h3 style="margin-top:150px">
+		Zapato <%= get_shoe_link %>
+	</h3>
+</div>
+<div class="clear"></div>

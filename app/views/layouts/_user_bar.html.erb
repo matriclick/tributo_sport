@@ -1,0 +1,24 @@
+<div style="left:830px; top:10px; position:absolute;">
+	<% if user_signed_in? %>
+		<%= link_to "Tu Cuenta | ", user_profile_personalization_path,  :class => 'no_underline_login', :rel => 'nofollow' %>
+		<%= carrito_compra_link %> |
+		<%= link_to 'Salir', destroy_user_session_path, method: :delete,  :class => 'no_underline_login', :rel => 'nofollow' %>
+	<% else %>
+		<%= link_to 'Ingresar', '#', :class => 'log_in_down', :rel => 'log_in_down' %> <div class="log_in_down">|</div>
+		<%= link_to 'Registro', new_user_registration_path, :class => 'no_underline_login', :rel => 'nofollow' %>
+	<% end %>
+</div>
+<div class="log_in sign_in_tab" style="left:680px; top:30px; position:absolute; z-index:999">
+	<%= render "layouts/sign_in_tab" %>
+</div>
+<div class="center box_nine_six_cero" style="margin-top:5px;">
+	<div class="left" style="margin-top:10px">
+		<%= link_to (image_tag 'el_bazar/logo.png', :alt => "Tramanta.com"), root_country_path %>
+	</div>
+	<div class="left" style="border-bottom:1px solid #ccc; width:800px;">
+		<div>
+			<%= render 'layouts/main_menu' %>
+		</div>
+	</div>
+</div>
+

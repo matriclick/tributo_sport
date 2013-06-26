@@ -1,0 +1,28 @@
+<% if params[:yield_fancybox] %>
+	<%= yield %>
+<% else %>
+	<% title("Matriclick", false) %>
+	<%= render "layouts/user_bar" %>
+	<div class="clear"></div>
+	<div class="center <%= @background ? 'background' : '' %>">
+		<% if @home || false %>
+			<div class="home_content center">
+				<%= yield %>
+			</div>
+		<% else %>
+			<div class="main_content center">
+				<%= render "layouts/navigation" %>
+				<%= yield %>
+			</div>	
+		<% end %>
+	</div>
+	<div class="clear"></div>
+	<% if !(@home || false) %>
+		<br />
+	<% end %>
+	<% unless @supplier_login_footer %>
+		<%= render "layouts/footer" %>
+	<% else %>
+	  <%= render "layouts/supplier_login_footer" %>
+	<% end %>
+<% end %>

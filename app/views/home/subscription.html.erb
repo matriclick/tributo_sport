@@ -1,0 +1,22 @@
+<div style="width:550px; height:250px;">
+	<div style='float:right;'>
+		<%= image_tag 'subscriber_popup/vestido-suscribirse.jpg', :alt => 'Vestidos de Fiesta' %>
+	</div>
+	<div>
+		<h1 style="width:250px">Suscríbete a Tramanta.com</h1>
+		<%= form_for @subscriber, :url => subscription_create_path, :validate => true do |f| %>
+		  <div><%= f.label :email, 'Correo' %> <%= f.text_field :email %></div>
+		  <div style="margin-top:10px">
+			<%= f.label :commune_id, 'Comuna' %> 
+			<%= f.grouped_collection_select :commune_id, Region.order(:name), :communes, :name, :id, :name, :prompt => t('select') %>
+		  </div>
+		  <%= f.hidden_field :url_coming_from, :value => session[:url_coming_from] %>
+		  <div style="margin:20px 10px 10px 10px;">
+		    <%= f.submit 'Suscribirse', :class => 'sign_in_tab_button' %>
+		  </div>
+		<% end %>
+		<div class="lucida small" style="margin:20px 10px 10px 10px;">
+			<%= link_to 'o continúa a Tramanta.com', '#', onClick: '$.fancybox.close();', :class => 'blue' %>
+		</div>
+	</div>
+</div>

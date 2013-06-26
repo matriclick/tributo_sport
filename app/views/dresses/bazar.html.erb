@@ -1,0 +1,26 @@
+<script>
+	$("#main_search").live("blur", function(){
+		var default_value = $(this).attr("rel");
+		if ($(this).val() == ""){
+			$(this).val(default_value);
+			$(this).css('color', '#bbb')
+		}
+	}).live("focus", function(){
+		var default_value = $(this).attr("rel");
+		if ($(this).val() == default_value){
+			$(this).val("");
+			$(this).css('color', 'black')
+		}
+	});
+</script>
+<h2 style="text-align:center; background:white;">
+	<%= notice %>
+</h2>
+
+<div style="text-align:center; margin-top:200px">
+	<form action="<%= dresses_search_path %>" method="get">
+		<%= text_field_tag(:q, @search_term, size: '55x10', id: 'main_search', 
+			value: 'Ejemplo: Vestido azul', rel: 'Ejemplo: Vestido azul') %>
+		<%= submit_tag("Buscar", :name => nil, :class => 'button_filter_pink') %>
+	</form>
+</div>
