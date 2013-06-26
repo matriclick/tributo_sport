@@ -618,32 +618,16 @@ puts "\n"
 
 puts "--> Dress Types:"
 aux = []
-aux << (DressType.find_by_name("ajuar") || DressType.create(:name => 'ajuar', :description => "Ajuar para la novia"))
-aux << (DressType.find_by_name("vestidos-fiesta") || DressType.create(:name => 'vestidos-fiesta', :description => "Vestidos para la fiesta"))
-aux << (DressType.find_by_name("zapatos") || DressType.create(:name => 'zapatos', :description => "Zapatos"))
-
-aux << (DressType.find_by_name("accesorios-aros") || DressType.create(:name => 'accesorios-aros', :description => "Accesorios para fiesta"))
-aux << (DressType.find_by_name("accesorios-anillos") || DressType.create(:name => 'accesorios-anillos', :description => "Accesorios para fiesta"))
-aux << (DressType.find_by_name("accesorios-collares") || DressType.create(:name => 'accesorios-collares', :description => "Accesorios para fiesta"))
-aux << (DressType.find_by_name("accesorios-pulseras") || DressType.create(:name => 'accesorios-pulseras', :description => "Accesorios para fiesta"))
-aux << (DressType.find_by_name("accesorios-carteras") || DressType.create(:name => 'accesorios-carteras', :description => "Accesorios para fiesta"))
-aux << (DressType.find_by_name("accesorios-sombreros") || DressType.create(:name => 'accesorios-sombreros', :description => "Accesorios para fiesta"))
-aux << (DressType.find_by_name("accesorios-carcasas") || DressType.create(:name => 'accesorios-carcasas', :description => "Carcasas para celulares"))
-
-aux << (DressType.find_by_name("ropa-de-mujer-tops-poleras") || DressType.create(:name => 'ropa-de-mujer-tops-poleras', :description => "Poleras mujer"))
-aux << (DressType.find_by_name("ropa-de-mujer-tops-blusas") || DressType.create(:name => 'ropa-de-mujer-tops-blusas', :description => "Blusas mujer"))
-aux << (DressType.find_by_name("ropa-de-mujer-pantalones-tela") || DressType.create(:name => 'ropa-de-mujer-pantalones-tela', :description => "Pantalones mujer"))
-aux << (DressType.find_by_name("ropa-de-mujer-pantalones-jeans") || DressType.create(:name => 'ropa-de-mujer-pantalones-jeans', :description => "Jeans mujer"))
-aux << (DressType.find_by_name("ropa-de-mujer-pantalones-leggins") || DressType.create(:name => 'ropa-de-mujer-pantalones-leggins', :description => "Leggins mujer"))
-aux << (DressType.find_by_name("ropa-de-mujer-pantalones-panties") || DressType.create(:name => 'ropa-de-mujer-pantalones-panties', :description => "Panties mujer"))
-aux << (DressType.find_by_name("ropa-de-mujer-shorts") || DressType.create(:name => 'ropa-de-mujer-shorts', :description => "Shorts mujer"))
-aux << (DressType.find_by_name("ropa-de-mujer-polleras") || DressType.create(:name => 'ropa-de-mujer-polleras', :description => "Shorts mujer"))
-aux << (DressType.find_by_name("ropa-de-mujer-abrigados-chalecos") || DressType.create(:name => 'ropa-de-mujer-abrigados-chalecos', :description => "Chalecos mujer"))
-aux << (DressType.find_by_name("ropa-de-mujer-abrigados-polerones") || DressType.create(:name => 'ropa-de-mujer-abrigados-polerones', :description => "Polerones mujer"))
-aux << (DressType.find_by_name("ropa-de-mujer-chaquetas") || DressType.create(:name => 'ropa-de-mujer-chaquetas', :description => "Chaquetas mujer"))
-
-aux << (DressType.find_by_name("ropa-deportiva") || DressType.create(:name => 'ropa-deportiva', :description => "Ropa deportiva general"))
-
+aux << (DressType.find_by_name("ropa-deportiva-primera-capa-poleras") || DressType.create(:name => 'ropa-deportiva-primera-capa-poleras', :description => "ropa-deportiva-primera-capa-poleras"))
+aux << (DressType.find_by_name("ropa-deportiva-primera-capa-pantalones") || DressType.create(:name => 'ropa-deportiva-primera-capa-pantalones', :description => "ropa-deportiva-primera-capa-pantalones"))
+aux << (DressType.find_by_name("ropa-deportiva-primera-capa-shorts") || DressType.create(:name => 'ropa-deportiva-primera-capa-shorts', :description => "ropa-deportiva-primera-capa-shorts"))
+aux << (DressType.find_by_name("ropa-deportiva-poleras-fútbol") || DressType.create(:name => 'ropa-deportiva-poleras-fútbol', :description => "ropa-deportiva-poleras-fútbol"))
+aux << (DressType.find_by_name("ropa-deportiva-poleras-básquetbol") || DressType.create(:name => 'ropa-deportiva-poleras-básquetbol', :description => "ropa-deportiva-poleras-básquetbol"))
+aux << (DressType.find_by_name("ropa-deportiva-poleras-running") || DressType.create(:name => 'ropa-deportiva-poleras-running', :description => "ropa-deportiva-poleras-running"))
+aux << (DressType.find_by_name("ropa-deportiva-shorts-fútbol") || DressType.create(:name => 'ropa-deportiva-shorts-fútbol', :description => "ropa-deportiva-shorts-fútbol"))
+aux << (DressType.find_by_name("ropa-deportiva-shorts-básquetbol") || DressType.create(:name => 'ropa-deportiva-shorts-básquetbol', :description => "ropa-deportiva-shorts-básquetbol"))
+aux << (DressType.find_by_name("ropa-deportiva-shorts-running") || DressType.create(:name => 'ropa-deportiva-shorts-running', :description => "ropa-deportiva-shorts-running"))
+aux << (DressType.find_by_name("productos-deportivos-bicicletas") || DressType.create(:name => 'productos-deportivos-bicicletas', :description => "productos-deportivos-bicicletas"))
 aux.each { |x| puts x.name}
 puts "\n"
 
