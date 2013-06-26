@@ -237,12 +237,11 @@ class DressesController < ApplicationController
     
     @dress = Dress.find_by_slug(params[:slug])
     @type = DressType.find_by_name params[:type]
-    
+            
     if !@dress.nil? and !@type.nil?
       @related_dresses = @dress.get_related_dresses
       set_dresses_viewed_cookies(@dress)
       @viewed_dresses = get_dresses_viewed(@dress)
-      
       if @dress.supplier_account.nil? or @dress.dress_images.first.nil?
         respond_to do |format|
           format.html { redirect_to bazar_path }
@@ -484,9 +483,13 @@ class DressesController < ApplicationController
       ids.delete(dress.id.to_s)
       ids.uniq!
       dresses = Array.new
-      ids[0..3].each do |id|
-        dresses.push(Dress.find(id))
-      end      
+      length = ids.size > 3 ? 3 : ids.size
+      ids[0..length].each do |id|
+        dress = Dress.find_by_id id
+        if !dress.nil?
+          dresses.push(dress)
+        end
+      end
       return dresses
     end
   end     

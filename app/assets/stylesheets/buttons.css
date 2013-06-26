@@ -257,7 +257,6 @@
 		position:relative;
 		top:1px;
 }
-
 .contest_button {
 	-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
 	-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
@@ -291,4 +290,50 @@
 	position:relative;
 	top:1px;
 }
+.button_buy_black {
+	background-color:#000000;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	color:#ffffff;
+	font-family:arial;
+	font-size:14px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	width:200px;
+	text-align:center;	
+}.button_buy_black:hover {
+	background-color:#666666;
+	color:#ffffff;
+	cursor:pointer;
+}.button_buy_black:active {
+	position:relative;
+	top:1px;
+}
+.button_filter_black {
+	background-color:#000000;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	color:#ffffff;
+	font-family:arial;
+	font-size:11px;
+	font-weight:bold;
+	padding:3px 24px;
+	text-decoration:none;
+	text-align:center;
+}.button_filter_black:hover {
+	background-color:#666666;
+	cursor:pointer;
+	color:#ffffff;
+}.button_filter_black:active {
+	position:relative;
+	top:1px;
+}
+
 /*------------------------------- Button -------------------------*/

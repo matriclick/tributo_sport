@@ -7,8 +7,8 @@ set :application, "matriclick"
 task :production do
   set :scm_passphrase, "holagorda1"
   set :application, "matriclick"
-  server "ec2-54-242-110-80.compute-1.amazonaws.com", :app, :web, :db, :primary => true
-  set :repository,  "git@github.com:matriclick/tienda.git"
+  server "ec2-184-73-106-193.compute-1.amazonaws.com", :app, :web, :db, :primary => true
+  set :repository,  "git@github.com:matriclick/tributo_sport.git"
   set :scm, "git"
   set :deploy_via, :remote_cache
   set :branch, "master"
