@@ -9,11 +9,11 @@ class ApplicationController < ActionController::Base
   end
 
 	def meta_content_default
-    	@title_content = "Tramanta.com"
-    	@meta_description_content = "Compra online vestidos de fiesta, chaquetas, blusas, y muchas otros productos de moda en Tramanta.com"
+    	@title_content = "TributoSport.com"
+    	@meta_description_content = "Compra online vestidos de fiesta, chaquetas, blusas, y muchas otros productos de moda en TributoSport.com"
       @og_type = 'article'
       @og_image = 'http://www.tramanta.com/assets/el_bazar/logo-bf68209fb8b99b402a5a903d59550732.png'
-      @og_description = 'Tramanta.com'
+      @og_description = 'TributoSport.com'
     	#SEO: indica el idioma natural en el que el sitio será mostrado, en ocasiones es utilizado
     	#     por los buscadores para indexar.
     	@meta_languaje_content = "es"

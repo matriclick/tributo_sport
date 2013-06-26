@@ -23,7 +23,7 @@ class DressesController < ApplicationController
   end
   
   def contact_elbazar
-    add_breadcrumb "Tramanta", :bazar_path
+    add_breadcrumb "TributoSport", :bazar_path
     add_breadcrumb "Contacto", :contact_elbazar_path
     
     @title_content = 'Formulario de Contacto'
@@ -208,7 +208,7 @@ class DressesController < ApplicationController
   
     @title_content = 'Buscando '+@search_term.capitalize
   	@meta_description_content = 'Compra '+@search_term.capitalize
-    add_breadcrumb "Tramanta", :bazar_path
+    add_breadcrumb "TributoSport", :bazar_path
     add_breadcrumb @search_term, dresses_search_path(q: @search_term)
     
     #IE v8 y anteriores no compatible con carga dinamica
@@ -465,7 +465,7 @@ class DressesController < ApplicationController
   end
   
   def generate_bread_crumbs(dress_type_param)
-    add_breadcrumb "Tramanta", :bazar_path
+    add_breadcrumb "TributoSport", :bazar_path
     add_breadcrumb dress_type_param.gsub('-', ' ').capitalize, dresses_ver_path(:type => dress_type_param)
   end
   
