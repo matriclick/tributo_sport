@@ -191,7 +191,7 @@ Devise.setup do |config|
   # ==> OmniAuth
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
-  config.omniauth :facebook, '176583972510260', '899dbeab2dc54fef04ff5c40c47585d6'
+  config.omniauth :facebook, '142968845898782', 'd92ca39420807d3cb158517e4f28685b'
   config.omniauth :open_id, OpenID::Store::Filesystem.new('/tmp'), :name => 'google', :identifier => 'https://www.google.com/accounts/o8/id'
 
   # ==> Warden configuration
