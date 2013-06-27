@@ -4,8 +4,8 @@ class Purchase < ActiveRecord::Base
   belongs_to :user
   belongs_to :delivery_info
   belongs_to :purchasable, :polymorphic => true
-  has_many :credits
-  has_many :credit_reductions
+  has_many :credits, :dependent => :destroy
+  has_many :credit_reductions, :dependent => :destroy
   belongs_to :delivery_method
   
   validates :purchasable_id, :purchasable_type, :user_id, :price, :currency, :confirmed_terms, :presence => true

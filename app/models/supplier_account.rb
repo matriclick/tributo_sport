@@ -15,7 +15,7 @@ class SupplierAccount < ActiveRecord::Base
   belongs_to :country
 	belongs_to :supplier
   belongs_to :supplier_account_type
-	belongs_to :address
+	belongs_to :address, :dependent => :destroy
   has_many :albums, :dependent => :destroy
 	has_many :events, :dependent => :destroy
 	has_many :bookings, :dependent => :destroy
