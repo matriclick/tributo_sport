@@ -13,12 +13,12 @@ class PacksController < ApplicationController
       @slider_images = []
     end
 	  
-  	@title_content = 'Moda y Tendencias'
+  	@title_content = 'Ropa y productos deportivos'
   	@meta_description_content = 'Reportajes e información sobre las últimas tendencias de la moda local e internacional'
-  	@h1 = 'Revista de Moda y Tendencias'
-  	@h2 = 'En este blog encontrarás datos, ideas y todo lo que necesitas saber para que todas te sigan'
+  	@h1 = 'Todo lo que necesitas saber de deporte'
+  	@h2 = 'Alto rendimiento exige una armadura que acompañe'
   	@h3 = ''
-    add_breadcrumb "Blog El Bazar", :blog_el_bazar_path
+    add_breadcrumb "Sports Blog", :blog_el_bazar_path
     	
   	respond_to do |format|
       format.html { render :index }

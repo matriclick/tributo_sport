@@ -137,7 +137,7 @@ class PostsController < ApplicationController
       when 'Lunas de Miel'
         add_breadcrumb "Blog Lunas de miel", :lunas_de_miel_path
       when 'El Bazar'
-        add_breadcrumb "Blog El Bazar", :blog_el_bazar_path
+        add_breadcrumb "Sports Blog", :blog_el_bazar_path
       when 'Tu Casa'
         add_breadcrumb "Blog Tu Casa", :blog_tu_casa_path
       when 'Viajes'

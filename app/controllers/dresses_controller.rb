@@ -13,7 +13,7 @@ class DressesController < ApplicationController
     @title_content = 'Preguntas frecuentes'
     @meta_description_content = 'Preguntas frecuentes de la tienda online de vestidos y ropa de mujer'
     @background = true
-    add_breadcrumb "El Bazar", :bazar_path
+    add_breadcrumb "Tributo Sport", :bazar_path
     add_breadcrumb "Preguntas frecuentes", :faq_elbazar_path
   end
   
