@@ -44,7 +44,7 @@ class AdministrationController < ApplicationController
     if !current_user.matriclicker.nil?
       @matriclicker = current_user.matriclicker
     else 
-      redirect_to blog_url
+      redirect_to bazar_url
     end
   end
   

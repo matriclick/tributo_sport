@@ -814,14 +814,19 @@ puts "\n"
 
 puts "--> TagType:"
 aux = []
-aux << (TagType.find_by_name("Estilo Ropa") || TagType.create(:name => 'Estilo Ropa', :description => ''))
+aux << (TagType.find_by_name("Deporte") || TagType.create(:name => 'Deporte', :description => ''))
 aux.each { |x| puts x.name }
 puts "\n"
 
 puts "--> Tag:"
 aux = []
-aux << (Tag.find_by_name("Formal") || Tag.create(:name => 'Formal', :image_name => 'formal.jpg', :tag_type_id => 1, :description => ''))
-aux << (Tag.find_by_name("Hippie") || Tag.create(:name => 'Hippie', :image_name => 'hippie.jpg', :tag_type_id => 1, :description => ''))
-aux << (Tag.find_by_name("Rockero") || Tag.create(:name => 'Rockero', :image_name => 'rockero.jpg', :tag_type_id => 1, :description => ''))
+aux << (Tag.find_by_name("Fútbol") || Tag.create(:name => 'Fútbol', :image_name => 'futbol.jpg', :tag_type_id => TagType.find_by_name("Deporte").id, :description => ''))
+aux << (Tag.find_by_name("Tenis") || Tag.create(:name => 'Tenis', :image_name => 'tenis.jpg', :tag_type_id => TagType.find_by_name("Deporte").id, :description => ''))
+aux << (Tag.find_by_name("Running") || Tag.create(:name => 'Running', :image_name => 'running.jpg', :tag_type_id => TagType.find_by_name("Deporte").id, :description => ''))
+aux << (Tag.find_by_name("Básquetbol") || Tag.create(:name => 'Básquetbol', :image_name => 'basquetbol.jpg', :tag_type_id => TagType.find_by_name("Deporte").id, :description => ''))
+aux << (Tag.find_by_name("Ciclismo") || Tag.create(:name => 'Ciclismo', :image_name => 'ciclismo.jpg', :tag_type_id => TagType.find_by_name("Deporte").id, :description => ''))
+aux << (Tag.find_by_name("Golf") || Tag.create(:name => 'Golf', :image_name => 'golf.jpg', :tag_type_id => TagType.find_by_name("Deporte").id, :description => ''))
+aux << (Tag.find_by_name("Hockey") || Tag.create(:name => 'Hockey', :image_name => 'hockey.jpg', :tag_type_id => TagType.find_by_name("Deporte").id, :description => ''))
+aux << (Tag.find_by_name("Moto") || Tag.create(:name => 'Moto', :image_name => 'moto.jpg', :tag_type_id => TagType.find_by_name("Deporte").id, :description => ''))
 aux.each { |x| puts x.name }
 puts "\n"

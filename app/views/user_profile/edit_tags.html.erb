@@ -1,5 +1,5 @@
-<h1>Selecciona los estilos que mejor reflejen el tuyo</h1>
-<p>Esta información la utilizaremos para enviarte correos y darle más importancia a los productos que calcen con tu estilo.</p>
+<h1>Selecciona los deportes que practicas</h1>
+<p>Esta información la utilizaremos para enviarte correos y darle más importancia a los productos que calcen con tus preferencias.</p>
 
 <%= form_for(@user, :url => user_profile_update_tags_path) do |f| %>
 	<% @tags.each do |tag| %>
@@ -13,6 +13,6 @@
 	<% end %>
 	<div class="clear"></div>
 	<div style="margin-top:25px">
-		  <%= f.submit 'Actualizar', class: 'button_buy_dress_pink' %>
+		  <%= f.submit 'Actualizar', class: 'button_buy_black' %>
 	</div>
 <% end %>

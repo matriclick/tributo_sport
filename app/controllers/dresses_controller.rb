@@ -267,7 +267,7 @@ class DressesController < ApplicationController
         @title_content = @dress.introduction
       	@meta_description_content = @type.name.gsub('-', ' ').capitalize+': '+@dress.description+' - '+@dress.description
         @og_type = 'article'
-        @og_image = 'http://www.matriclick.com'+@dress.dress_images.first.dress.url(:original)
+        @og_image = 'http://www.tributosport.com'+@dress.dress_images.first.dress.url(:original)
         @og_description = @type.name + ': ' + @dress.description
 
         @title = params[:type]

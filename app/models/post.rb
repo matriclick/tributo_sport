@@ -6,7 +6,7 @@ class Post < ActiveRecord::Base
   
   belongs_to :country
   belongs_to :industry_category
-  has_many :blog_comments
+  has_many :blog_comments, :dependent => :destroy
   has_many :post_contents, :dependent => :destroy
   has_and_belongs_to_many :pack_promotions
   

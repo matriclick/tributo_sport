@@ -271,7 +271,7 @@ class ApplicationController < ActionController::Base
     	
 	def save_matriclick_last_url_in_session
 	  if !(controller_name.include?('devise') or controller_name.include?('omniauth_callbacks') or controller_name.include?('registrations') or ['sessions', 'registrations'].include?(controller_name))
-	    if !request.url.include?('endless_scrolling') and request.get?
+	    if !request.url.include?('endless_scrolling') and request.get? and !request.url.include?('suscribirse')
 	      session[:matriclick_last_url] = request.url
       end
     end
@@ -473,9 +473,9 @@ class ApplicationController < ActionController::Base
 	
 	def redirect_unless_admin
 		if user_signed_in?
-			redirect_to blog_url unless current_user.role_id == 1
+			redirect_to bazar_url unless current_user.role_id == 1
 		else
-			redirect_to blog_url
+			redirect_to bazar_url
 		end
 	end
 	
