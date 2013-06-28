@@ -30,7 +30,7 @@ gem 'geocoder'
 gem 'client_side_validations'
 gem "breadcrumbs_on_rails"
 
-gem 'sitemap_generator', '~> 3.4'
+gem 'sitemap_generator', '~> 4.0'
 
 gem 'friendly_id'
 

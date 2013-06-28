@@ -12,7 +12,7 @@ development:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: tramanta
+  database: tributo_sport
   pool: 5
   username: root
   password:

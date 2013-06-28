@@ -1,10 +1,12 @@
 class CreateTagsDressesTable < ActiveRecord::Migration
   def up
-    create_table :tags_dresses, :id => false do |t|
-      t.integer :dress_id
-      t.integer :tag_id
+    unless(table_exists?(:tags_dresses))
+      create_table :tags_dresses, :id => false do |t|
+        t.integer :dress_id
+        t.integer :tag_id
           
-      t.timestamps
+        t.timestamps
+      end
     end
   end
 

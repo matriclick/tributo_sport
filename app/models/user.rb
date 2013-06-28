@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
 	has_one :matriclicker, :dependent => :destroy
   belongs_to :country
 	belongs_to :role
-	belongs_to :reviews, :dependent => :destroy
+	has_many :reviews, :dependent => :destroy
 	belongs_to :user_account, :dependent => :destroy
 	belongs_to :cloth_measure, :dependent => :destroy
   has_and_belongs_to_many :tags

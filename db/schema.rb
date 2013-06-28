@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130627180616) do
+ActiveRecord::Schema.define(:version => 20130619185504) do
 
   create_table "activities", :force => true do |t|
     t.string   "name"
@@ -639,6 +639,7 @@ ActiveRecord::Schema.define(:version => 20130627180616) do
     t.integer  "position",            :default => 99
     t.string   "slug"
     t.string   "product_keywords"
+    t.integer  "cloth_measure_id"
   end
 
   add_index "dresses", ["slug"], :name => "index_dresses_on_slug", :unique => true
@@ -917,15 +918,6 @@ ActiveRecord::Schema.define(:version => 20130627180616) do
     t.datetime "updated_at"
     t.integer  "supplier_account_id"
     t.integer  "industry_category_id"
-  end
-
-  create_table "mailings", :force => true do |t|
-    t.datetime "date_sent"
-    t.integer  "users_sent"
-    t.datetime "dresses_start_date"
-    t.datetime "dresses_end_date"
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
   create_table "matri_dream_ics", :force => true do |t|

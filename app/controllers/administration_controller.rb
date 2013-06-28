@@ -222,7 +222,7 @@ class AdministrationController < ApplicationController
   	
   	respond_to do |format|
   		if @supplier_account.update_attributes(params[:supplier_account], :validate => false)
-  			format.html { redirect_to administration_show_supplier_account_path(@supplier_account) }
+  			format.html { redirect_to administration_show_supplier_account_path(id: @supplier_account.id) }
   		else
 				@industry_categories = IndustryCategory.joins(:countries).where("countries.id = ?", session[:country].id).order "name"
 		    @industry_category_types = IndustryCategoryType.all
