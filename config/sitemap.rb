@@ -4,7 +4,7 @@ SitemapGenerator::Sitemap.default_host = "http://www.tributosport.com"
 SitemapGenerator::Sitemap.create do
   
   add '/chile', :changefreq => 'daily', :priority => 1
-  add '/chile/blog-tramanta', :changefreq => 'daily', :priority => 0.9
+  add '/chile/blog-tributosport', :changefreq => 'daily', :priority => 0.9
     
   Dress.all.each do |dress|
     add dress_ver_path(:type => dress.dress_type.name, :slug => dress.slug, :country_url_path => 'chile'), :lastmod => dress.updated_at, :priority => 0.9
