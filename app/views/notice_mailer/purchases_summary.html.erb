@@ -1,0 +1,49 @@
+<% content_for :content do %>
+	<table width="95%" cellpadding="30">
+		<tr>
+			<td align="left">
+				<font face="Lucida Grande, Segoe UI, Arial, Verdana, Lucida Sans Unicode, Tahoma, Sans Serif">
+					Hola!<br/><br/>
+					<% if @purchases.size > 0 %>
+						Lista de compras realizadas hasta el momento:
+						  <tr>
+						    <th>Fecha compra</th>
+						    <th>Tienda</th>
+						    <th>Producto</th>
+						    <th>Tipo</th>
+						    <th>Usuario</th>
+						    <th>Despacho</th>
+						    <th style="width:100px">Precio</th>
+						    <th>Moneda</th>
+						    <th>Forma Pago</th>
+						    <th>Estado</th>
+						  </tr>
+						<% @purchases.each do |purchase| %>
+						  <tr>
+							<td><%= purchase.created_at.strftime("%d %b %Y") %></td>
+							<% if purchase.purchasable.nil? %>
+								<td>purchase.purchasable es nil!</td>
+								<td>purchase.purchasable es nil!</td>
+							<% else %>
+								<td><%= purchase.purchasable.supplier_account.fantasy_name if !purchase.purchasable.supplier_account.nil? %></td>
+								<td><%= link_to image_tag(purchase.purchasable.small_image), purchase %></td>
+							<% end %>
+						    <td><%= purchase.purchasable_type %></td>
+						    <td><%= purchase.user.email %> <%= raw '<br />('+purchase.delivery_info.name+')' if !purchase.delivery_info.nil? %></td>
+						    <td><%= link_to(purchase.delivery_info.get_address_string, purchase.delivery_info) if !purchase.delivery_info.nil? %></td>
+						    <td><%= number_to_currency purchase.price %></td>
+						    <td><%= purchase.currency %></td>
+							<td><%= purchase.transfer_type %></td>
+						    <td><%= purchase.status %></td>
+						  </tr>
+						<% end %>
+					<% else %>
+						<p style="color:#aaa;">¡Aún no hay compras!</p>
+					<% end %>
+				</font>
+			</td>
+		</tr>
+	</table>
+<% end %>
+
+<%= render "layouts/email_template" %>

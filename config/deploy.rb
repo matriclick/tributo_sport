@@ -28,6 +28,10 @@ namespace :deploy do
   task :restart, :roles => :app, :except => { :no_release => true } do
     run "touch #{File.join(current_path,'tmp','restart.txt')}"
   end
+  desc "Update the crontab file"
+  task :update_crontab, :roles => :db do
+    run "cd #{release_path} && whenever --update-crontab #{application}"
+  end
 end
 
 namespace :db do  
@@ -75,7 +79,10 @@ after "deploy", "sitemap:refresh_sitemaps"
 after "deploy:finalize_update", "db:db_config"
 after "db:db_config", "rvm:trust_rvmrc"
 after "rvm:trust_rvmrc", "db:run_migration"
+
+after "deploy:symlink", "deploy:update_crontab"
 before "deploy:symlink", "deploy:cleanup"
+
 
 before "deploy:setup" do
   assets.symlinks.setup
