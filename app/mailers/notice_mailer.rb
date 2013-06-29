@@ -5,7 +5,7 @@ class NoticeMailer < ActionMailer::Base
   def purchases_summary
     @purchases = Purchase.all
     
-    mail to: "contacto@tributosport.com", subject: "Devolución en TributoSport.com"
+    mail to: "contacto@tributosport.com", subject: "Reporte Diario Ventas TributoSport.com"
   end
   
 	#CONTACT
