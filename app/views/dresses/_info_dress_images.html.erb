@@ -10,9 +10,7 @@
 <% if enable_edit %>
 <div style="background:black; padding:2px; text-align:center;">
 	<%= link_to 'Editar | ', edit_supplier_account_dress_path(supplier, dress), :class => 'edit_dress_link' %>
-	<% if developer? %>
-		<%= link_to 'Eliminar', dress, confirm: '¿Estás seguro?', method: :delete, :class => 'edit_dress_link' %>
-	<% end %>
+	<%= link_to 'Eliminar', dress, confirm: '¿Estás seguro?', method: :delete, :class => 'edit_dress_link' %>
 </div>
 <% end %>
 
@@ -43,5 +41,4 @@
 		$.fancybox(ez.getGalleryList());
 	  return false;
 	});
-
 </script>

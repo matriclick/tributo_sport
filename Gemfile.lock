@@ -9,16 +9,6 @@ GIT
       warden (~> 1.0.3)
 
 GIT
-  remote: git://github.com/redvel-ltda/paperclip.git
-  revision: b06b9b6bbbf8093669c412402faa0078a4b7d613
-  specs:
-    paperclip (2.4.1)
-      activerecord (>= 2.3.0)
-      activesupport (>= 2.3.2)
-      cocaine (>= 0.0.2)
-      mime-types
-
-GIT
   remote: https://github.com/fxposter/nested_form.git
   revision: 485d20acc2385583571d8dc4ab709a1a7d69d0b3
   specs:
@@ -187,6 +177,12 @@ GEM
       oa-oauth (= 0.2.6)
       oa-openid (= 0.2.6)
     orm_adapter (0.0.5)
+    paperclip (3.4.2)
+      activemodel (>= 3.0.0)
+      activerecord (>= 3.0.0)
+      activesupport (>= 3.0.0)
+      cocaine (~> 0.5.0)
+      mime-types
     pdf-reader (1.2.0)
       Ascii85 (~> 1.0.0)
       hashery (~> 2.0)
@@ -297,7 +293,7 @@ DEPENDENCIES
   newrelic_rpm
   nifty-generators
   omniauth (= 0.2.6)
-  paperclip (~> 2.3)!
+  paperclip (~> 3.0)
   prawn
   prawnto_2
   rails (= 3.1.0)

@@ -6,11 +6,11 @@ class Dress < ActiveRecord::Base
   friendly_id :introduction, use: :slugged
 
 	has_many :dress_images, :dependent => :destroy
-	has_many :dress_requests
-	has_many :purchases, :as => :purchasable
+	has_many :dress_requests, :dependent => :destroy
+	has_many :purchases, :as => :purchasable, :dependent => :destroy
 	has_many :dress_stock_sizes, :dependent => :destroy
 	has_many :sizes, :through => :dress_stock_sizes
-  has_one :refund_request
+  has_one :refund_request, :dependent => :destroy
   
   has_and_belongs_to_many :dress_types
   has_and_belongs_to_many :tags
@@ -83,7 +83,7 @@ class Dress < ActiveRecord::Base
   end
   
 	def dress_type
-	  !self.dress_types.first.nil? ? self.dress_types.first : DressType.find_by_name("vestidos-fiesta")
+	  !self.dress_types.first.nil? ? self.dress_types.first : DressType.find_by_name("ropa-deportiva-primera-capa-poleras")
   end
     
 	def has_stock?

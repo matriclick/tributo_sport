@@ -17,7 +17,7 @@ gem 'geocoder'
 gem 'prawn'
 gem "prawnto_2", :require => "prawnto"
 
-gem 'paperclip', "~> 2.3", :git => "git://github.com/redvel-ltda/paperclip.git"
+gem "paperclip", "~> 3.0"
 # Mime Types for swfupload
 gem 'mime-types', :require => 'mime/types'
 gem 'cancan'

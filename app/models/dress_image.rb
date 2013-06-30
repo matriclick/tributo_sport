@@ -6,11 +6,10 @@ class DressImage < ActiveRecord::Base
 													:main => "300x",
 													:side => "70x",
 													:index_dress => "190x",
-													:index_accesory => "250x",
 													:tiny => "40x"
 												}, :whiny => false
 	validates_attachment_content_type :dress, :content_type => ['image/jpeg', 'image/png', 'image/gif', 'image/bmp', 'image/x-png', 'image/pjpeg']
-	validates_attachment_size :dress, :less_than => 2.megabytes
+	validates_attachment_size :dress, :less_than => 4.megabytes
 	
 	# FGM: Get all the images and remove the cover
 	def self.without_cover
