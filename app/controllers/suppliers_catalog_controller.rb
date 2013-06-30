@@ -22,7 +22,7 @@ class SuppliersCatalogController < ApplicationController
         load_facebook_meta(@supplier)
       end
     else
-      redirect_to products_and_services_catalog_select_industry_category_path
+      redirect_to bazar_path
     end
   end
   
@@ -34,7 +34,7 @@ class SuppliersCatalogController < ApplicationController
   	@supplier = check_supplier
 
   	if @supplier.nil?
-			redirect_to products_and_services_catalog_select_industry_category_path
+			redirect_to bazar_path
 		else
   		# FGM: Increase Page Views counter
   		@supplier.supplier_account.add_supplier_page_view(request.ip)
@@ -75,7 +75,7 @@ class SuppliersCatalogController < ApplicationController
 	def supplier_contacts
 		@supplier = check_supplier
 		if @supplier.nil?
-			redirect_to products_and_services_catalog_select_industry_category_path
+			redirect_to bazar_path
 		else
   		@supplier.supplier_account.add_supplier_page_view(request.ip, 'Contacto')
   		@supplier_contacts = @supplier.supplier_account.supplier_contacts
@@ -99,7 +99,7 @@ class SuppliersCatalogController < ApplicationController
 	def supplier_calendar
 	  @supplier = check_supplier
 	  if @supplier.nil?
-			redirect_to products_and_services_catalog_select_industry_category_path
+			redirect_to bazar_path
 		else
 		  @presentation = @supplier.supplier_account.presentation
   		@reserved_dates = @supplier.supplier_account.reserved_dates
@@ -123,7 +123,7 @@ class SuppliersCatalogController < ApplicationController
   def supplier_reviews
     @supplier = check_supplier
 	  if @supplier.nil?
-  		redirect_to products_and_services_catalog_select_industry_category_path
+  		redirect_to bazar_path
   	else
   		@presentation = @supplier.supplier_account.presentation
   		#star rating

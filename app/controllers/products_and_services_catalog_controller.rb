@@ -46,7 +46,7 @@ class ProductsAndServicesCatalogController < ApplicationController
 		  if !@industry_category.nil?
 		    redirect_to products_and_services_catalog_all_services_path(:industry_category_ids => @industry_category.slug)
 	    else
-	      redirect_to products_and_services_catalog_select_industry_category_path
+	      redirect_to bazar_path
 	    end
     else
   		@industry_category = IndustryCategory.find_by_slug params[:industry_category_ids]
@@ -74,7 +74,7 @@ class ProductsAndServicesCatalogController < ApplicationController
 		  if !@industry_category.nil?
 		    redirect_to products_and_services_catalog_all_suppliers_path(:industry_category_ids => @industry_category.slug)
 	    else
-	      redirect_to products_and_services_catalog_select_industry_category_path
+	      redirect_to bazar_path
 	    end
     else
   		@industry_category = IndustryCategory.find_by_slug params[:industry_category_ids]
@@ -107,7 +107,7 @@ class ProductsAndServicesCatalogController < ApplicationController
 		  if !@industry_category.nil?
 		    redirect_to products_and_services_catalog_album_path(:industry_category_ids => @industry_category.slug)
 	    else
-	      redirect_to products_and_services_catalog_select_industry_category_path
+	      redirect_to bazar_path
 	    end
     else
       @album_industry_names = %w[banqueteras fotografia_y_video]
@@ -173,12 +173,12 @@ class ProductsAndServicesCatalogController < ApplicationController
 		  if !@industry_category.nil?
 		    redirect_to products_and_services_catalog_index_path(:industry_category_ids => @industry_category.slug)
 	    else
-	      redirect_to products_and_services_catalog_select_industry_category_path
+	      redirect_to bazar_path
 	    end
     else
 		  @industry_category = IndustryCategory.find_by_slug params[:industry_category_ids]    
       if @industry_category.nil?
-        redirect_to products_and_services_catalog_select_industry_category_path
+        redirect_to bazar_path
       else
         @sub_industries = @industry_category.sub_industry_categories.order 'position ASC'
         @title_content = @industry_category.get_name
@@ -211,7 +211,7 @@ class ProductsAndServicesCatalogController < ApplicationController
     @object = find_product_or_service(params[:slug])
     
     if @object.nil?
-      redirect_to products_and_services_catalog_select_industry_category_path
+      redirect_to bazar_path
     else    
       @description = @object.description
       @supplier = @object.supplier_account.supplier
@@ -229,7 +229,7 @@ class ProductsAndServicesCatalogController < ApplicationController
     @object = find_product_or_service(params[:slug])
     
     if @object.nil?
-      redirect_to products_and_services_catalog_select_industry_category_path
+      redirect_to bazar_path
     else
   	  if @object.class.to_s == "Product"
     		@faqs = @object.product_faqs
@@ -250,7 +250,7 @@ class ProductsAndServicesCatalogController < ApplicationController
     @object = find_product_or_service(params[:slug])
     
     if @object.nil?
-      redirect_to products_and_services_catalog_select_industry_category_path
+      redirect_to bazar_path
     else
     	@supplier = @object.supplier_account.supplier
     	@supplier_contacts = @object.supplier_account.supplier_contacts
@@ -267,7 +267,7 @@ class ProductsAndServicesCatalogController < ApplicationController
   def conversations
     @object = find_product_or_service(params[:slug])
     if @object.nil?
-      redirect_to products_and_services_catalog_select_industry_category_path
+      redirect_to bazar_path
     else
     	@supplier = @object.supplier_account.supplier
     	@enable_conversation = true if @object.supplier_account.approved_by_us
@@ -323,7 +323,7 @@ class ProductsAndServicesCatalogController < ApplicationController
   
   def redirect_if_object_class_nil
     if params[:slug].nil?
-      redirect_to products_and_services_catalog_select_industry_category_path
+      redirect_to bazar_path
     end
 	end
 	
