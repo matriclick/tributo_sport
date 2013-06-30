@@ -1,14 +1,10 @@
 <%= render "navigation", :dress => @dress, :type => @type %>
 <div id="notice"><%= notice %></div>
 
-<div>
-	<%= yield :left_arrow %>
-</div>
-
 <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=xa-4ecbca393feb795f"></script>
 <div class="dress_box left">
 	<%= render 'info_dress_images', :dress => @dress, enable_edit: @enable_edit, supplier: @supplier %>
-	<div class="addthis_toolbox addthis_default_style" style="margin-top:5px">
+	<div class="addthis_toolbox addthis_default_style" style="margin-top:15px">
 		<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
 		<a class="addthis_button_tweet"></a>
 		<a class="addthis_button_pinterest_pinit"></a> 
@@ -44,6 +40,3 @@
 		<%= render 'related_dresses', related_dresses: @viewed_dresses %>
 	</div>
 <% end %>
-<div>
-	<%= yield :right_arrow %>
-</div>

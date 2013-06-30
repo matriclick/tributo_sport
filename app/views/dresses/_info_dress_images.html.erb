@@ -9,7 +9,7 @@
 
 <% if enable_edit %>
 <div style="background:black; padding:2px; text-align:center;">
-	<%= link_to 'Editar | ', edit_supplier_account_dress_path(supplier, dress), :class => 'edit_dress_link' %>
+	<%= link_to 'Editar', edit_supplier_account_dress_path(supplier, dress), :class => 'edit_dress_link' %> | 
 	<%= link_to 'Eliminar', dress, confirm: '¿Estás seguro?', method: :delete, :class => 'edit_dress_link' %>
 </div>
 <% end %>
@@ -19,6 +19,7 @@
 		<%= image_tag 'dresses_icons/sold.png' %>
 	</div>
 <% end %>
+
 <img id="zoom_03" src="<%= dress.dress_images.first.dress.url(:main) %>" data-zoom-image="<%= dress.dress_images.first.dress.url(:original) %>" alt="<%= dress.dress_images.first.name %>" />
 
 <% unless (imgs = dress.dress_images).blank? %>
