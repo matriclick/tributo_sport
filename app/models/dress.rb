@@ -41,12 +41,12 @@ class Dress < ActiveRecord::Base
       query = ''
       keywords.each_with_index do |k, i|
         if i == 0
-          query = '(description like "%'+k+'%" or introduction like "%'+k+'%")'
+          query = '(dress_types.name like "%'+k+'%" or dresses.description like "%'+k+'%" or dresses.introduction like "%'+k+'%")'
         else
-          query = '(description like "%'+k+'%" or introduction like "%'+k+'%") and '+query
+          query = '(dress_types.name like "%'+k+'%" or dresses.description like "%'+k+'%" or dresses.introduction like "%'+k+'%") and '+query
         end
       end
-      return self.where(query).available
+      return self.joins(:dress_types).where(query).available
     end
   end
 	
@@ -148,7 +148,7 @@ class Dress < ActiveRecord::Base
   end
   
   def main_image
-    self.dress_images.first.dress.url(:index)
+    self.dress_images.first.dress.url(:main)
   end
   
   def small_image
