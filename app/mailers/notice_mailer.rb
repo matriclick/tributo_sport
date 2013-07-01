@@ -4,7 +4,7 @@ class NoticeMailer < ActionMailer::Base
   
   def purchases_summary
     @purchases = Purchase.all
-    
+    @products_size = Dresses.available.all.size
     mail to: "contacto@tributosport.com", subject: "Reporte Diario Ventas TributoSport.com"
   end
   

@@ -4,6 +4,7 @@
 			<td align="left">
 				<font face="Lucida Grande, Segoe UI, Arial, Verdana, Lucida Sans Unicode, Tahoma, Sans Serif">
 					Hola!<br/><br/>
+					<p style="color:#aaa;">Existen <%= @products_size.to_s %> productos disponibles para la venta</p>
 					<% if @purchases.size > 0 %>
 						Lista de compras realizadas hasta el momento:
 						  <tr>
@@ -39,6 +40,7 @@
 						<% end %>
 					<% else %>
 						<p style="color:#aaa;">¡Aún no hay compras!</p>
+						<p style="color:#aaa;">Existen <%= @products_size.to_s %> productos disponibles para la venta</p>
 					<% end %>
 				</font>
 			</td>
