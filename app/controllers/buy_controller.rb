@@ -7,6 +7,9 @@ class BuyController < ApplicationController
 
   helper ActiveMerchant::Billing::Integrations::ActionViewHelper
   
+  def adyen
+  end
+  
   def index
     @user = current_user
 

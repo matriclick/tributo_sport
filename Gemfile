@@ -4,6 +4,7 @@ gem 'rails', '3.1.0'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
+gem 'adyen'
 
 gem 'mysql2'
 gem 'active_merchant_webpay', :path => './vendor/webpay_gem/active_merchant_webpay'

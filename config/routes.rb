@@ -37,6 +37,8 @@ Matri::Application.routes.draw do
     match 'notify' => 'buy#notify', :via => [:get, :post]
     match 'success' => 'buy#success', :via => [:get, :post]
     match 'failure' => 'buy#failure', :via => [:get, :post]
+
+    get 'adyen' => 'buy#adyen'
     
     resources :sizes do 
       collection do 

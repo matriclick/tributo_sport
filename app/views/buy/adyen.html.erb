@@ -1,0 +1,16 @@
+<%= form_tag(Adyen::Form.url) do %>
+    <%=
+      Adyen::Form.hidden_fields(
+        :currency_code => 'EUR',
+        :ship_before_date => Date.today,
+        :session_validity => Time.now,
+        :recurring => false,
+        :merchant_reference => 'my merchant reference',
+        :merchant_account => 'myaccount',
+        :skin_code => TEST_SKIN, # for example : in your environment.rb file : TEST_SKIN = 'RnflMtlD'
+        :shared_secret => SHARED_SECRETS[TEST_SKIN], #HMAC Key for test/production (be careful, it takes time to propagate this key)
+        :payment_amount => 30 * 100
+      )
+    %>
+   <%= submit_tag('pay') %>
+<% end %>
